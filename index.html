@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Criando Component Vue - PokeAPI</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <h2 v-text="title"></h2>
+    </header>
+    <section>
+        <article>
+            <div id="app">
+                <h1 class="text-center" v-text="title"></h1><br />
+
+                <div class="container">
+                    <div class="row">
+                        <div v-for="(pokemon,index) in pokemons" :key="index" class="col-md-4">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-header text-center">
+                                    <h2 v-text="pokemon.name" class="text-capitalize"></h2>
+                                    <input type="text" hidden>
+                                </div>
+                                <div class="row">
+                                    <img class="card-img-top col-md-6" :src="ImgFrente(index)"
+                                        alt="Foto do pokémon de frente">
+                                    <img class="card-img-top col-md-6" :src="ImgTras(index)"
+                                        alt="Foto do pokémon de costas">
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="shinySwitch">
+                                        <label class="custom-control-label" for="shinySwitch">Shiny Style</label>
+                                      </div><br>
+                                    <a href="#" class="btn btn-primary btn-block">Ver mais detalhes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <aside>
+
+        </aside>
+    </section>
+    <footer>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
